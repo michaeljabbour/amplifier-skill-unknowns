@@ -1,10 +1,53 @@
 # Unknowns
 
-Expose the assumptions and unanswered questions that could change a plan, then choose the next useful inquiry.
+Find the question that could change your plan.
 
-## Consolidated capability
+For people starting unfamiliar or uncertain work. Unknowns makes assumptions and unanswered questions visible, attaches an evidence basis and helps choose the next useful inquiry instead of growing an endless risk list.
 
-Portable method: [skills/unknowns/SKILL.md](skills/unknowns/SKILL.md). Install with `python3 scripts/capability.py install --dest ~/.agents/skills`. See [consolidation and runtime boundaries](docs/CONSOLIDATION.md). The retained source guide below documents the optional original host integration and historical evidence; it is not a new outcome claim.
+[Explore the site](https://michaeljabbour.github.io/amplifier-skill-unknowns/)
+
+## What you get
+
+- **Separate facts from assumptions.** Mark what is established, what is open and what is only a possible blind spot.
+- **Spend inquiry where it matters.** Choose a question whose answer could alter a decision or acceptance test.
+- **Keep a map that can change.** Reclassify an entry when evidence arrives, retaining the source and the reason for the change.
+
+## Start here
+
+```sh
+git clone https://github.com/michaeljabbour/amplifier-skill-unknowns.git
+cd amplifier-skill-unknowns
+python3 scripts/capability.py install --dest ~/.agents/skills
+```
+
+This installs the portable method and its packaged references into your agent skill folder. If your host uses another folder, pass that path to `--dest`. Start a new session or use your host’s skill refresh so it can discover the installed skill. Optional native tools are installed separately.
+
+Try this first task:
+
+> Use Unknowns to review a fictional export migration plan. Separate established requirements from compatibility assumptions, attach an evidence basis and choose the one unanswered question most likely to change the plan. Keep possible blind spots labeled as hypotheses.
+
+## What you need
+
+- Python 3.11 or later for the portable install helper.
+- The portable method and deterministic map operations need no engine or model key.
+- The optional native unknowns CLI can seed, add and triage a map; Graphviz is only needed for image export.
+- Pipeline execution is separate from map creation and needs its own configured runner.
+
+For the optional native interface, use a project virtual environment:
+
+```sh
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install .
+```
+
+## Evidence and limits
+
+Native map/tool tests and an installed no-engine seed/add/triage check passed. A map or routing token does not demonstrate that an inquiry ran or that rework was avoided.
+
+The worked examples on the site are fictional. They illustrate the output and decisions; they are not user results or measured benefit. See [consolidation and runtime boundaries](docs/CONSOLIDATION.md) for retained interfaces and acceptance scope.
+
+---
 
 ## Retained source guide
 
@@ -41,7 +84,7 @@ right-hand three; the first box is just what's already settled.
 Install the bundle:
 
 ```
-amplifier bundle add https://github.com/michaeljabbour/amplifier-bundle-unknowns
+amplifier bundle add https://github.com/michaeljabbour/amplifier-skill-unknowns
 ```
 
 Then pick either of the two easiest first runs.
