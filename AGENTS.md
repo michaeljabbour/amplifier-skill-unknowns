@@ -81,3 +81,7 @@ Note: `.gitignore` excludes `*.png` but explicitly re-includes `bundle.png`.
 - **`/unknownfinder` is a thin alias** for the `unknowns:unknownfinder` agent —
   the method lives only in `agents/unknownfinder.md`. Never re-implement the
   procedure in the skill; edit the agent.
+
+## Capability consolidation (2026-10-28)
+
+The canonical method now lives in skills/unknowns/SKILL.md and its references. Legacy slash names are mode adapters; their archived skill text uses REFERENCE.md. The unknownfinder agent loads the packaged method. Preserve the deterministic unknowns_map library, CLI and canonical DOT/pretty-renderer split.

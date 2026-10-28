@@ -1,4 +1,14 @@
-# amplifier-bundle-unknowns
+# Unknowns
+
+Expose the assumptions and unanswered questions that could change a plan, then choose the next useful inquiry.
+
+## Consolidated capability
+
+Portable method: [skills/unknowns/SKILL.md](skills/unknowns/SKILL.md). Install with `python3 scripts/capability.py install --dest ~/.agents/skills`. See [consolidation and runtime boundaries](docs/CONSOLIDATION.md). The retained source guide below documents the optional original host integration and historical evidence; it is not a new outcome claim.
+
+## Retained source guide
+
+### amplifier-bundle-unknowns
 
 Find and close the gap between what you asked for and what the work actually
 requires -- before that gap gets expensive.

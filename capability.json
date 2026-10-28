@@ -1,0 +1,83 @@
+{
+  "id": "unknowns",
+  "display_name": "Unknowns",
+  "kind": "skill",
+  "promise": "Expose the assumptions and unanswered questions that could change a plan, then choose the next useful inquiry.",
+  "audience": "People planning work in uncertain or unfamiliar territory.",
+  "trigger": "Find blind spots, map uncertainty, or decide what to investigate next.",
+  "skill_path": "skills/unknowns",
+  "modes": [
+    {
+      "name": "Map",
+      "when": "A plan needs an uncertainty inventory.",
+      "output": "An evidenced four-quadrant map with priorities."
+    },
+    {
+      "name": "Blindspot",
+      "when": "The user wants to surface unstated assumptions.",
+      "output": "A conversational challenge and concrete test."
+    },
+    {
+      "name": "Resolve",
+      "when": "An important uncertainty is actionable.",
+      "output": "A selected inquiry, evidence and a reclassified map entry."
+    }
+  ],
+  "examples": [
+    {
+      "title": "Fictional worked example",
+      "brief": "A fictional task illustrating Unknowns.",
+      "before": "A migration plan treats an untested compatibility assumption as settled.",
+      "after": "The map records it as a consequential question with an explicit verification step.",
+      "why": "The next inquiry targets a decision-changing unknown.",
+      "fictional": true
+    }
+  ],
+  "boundaries": [
+    "A brainstormed blind spot is a hypothesis; classification does not prove it exists."
+  ],
+  "install_commands": [
+    "python3 scripts/capability.py install --dest ~/.agents/skills"
+  ],
+  "runtime_install_commands": [
+    "python3 -m pip install ."
+  ],
+  "verification": [
+    {
+      "name": "Functional acceptance",
+      "command": "python3 scripts/functional_gate.py",
+      "expected": "Supplied fictional tasks exercise actual mechanisms and failure boundaries.",
+      "status": "passed",
+      "evidence": "31 native map/tool tests passed; installed no-engine seed/add/triage gate also passed."
+    },
+    {
+      "name": "Native host acceptance",
+      "command": "See retained source integration guide",
+      "expected": "Actual provider/host/desktop/daemon/runner acceptance for the selected adapter.",
+      "status": "not-run",
+      "evidence": "No live model, real desktop transaction, invitation, deployment or production data migration was performed by this functional baseline."
+    }
+  ],
+  "sources": [
+    {
+      "repo": "amplifier-bundle-unknowns",
+      "commit": "cbc8dcda6c384d5b0283db847a812f3f70121da8",
+      "paths": [
+        "context/unknowns-matrix.md",
+        "context/ascii-render-spec.md",
+        "agents/unknownfinder.md",
+        "agents",
+        "modules",
+        "context"
+      ],
+      "license": "MIT",
+      "role": "Primary retained owner history, mechanisms and records; portable method consolidates the listed entry points."
+    }
+  ],
+  "consolidation": [
+    "One portable method entry with mode references; original native engines, agents and records retained as optional adapters."
+  ],
+  "docs": [
+    "docs/CONSOLIDATION.md"
+  ]
+}

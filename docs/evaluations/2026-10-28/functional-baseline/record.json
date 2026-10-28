@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-28",
+  "status": "local-functional-baseline",
+  "source_commit": "cbc8dcda6c384d5b0283db847a812f3f70121da8",
+  "python": "3.12.5",
+  "fixture_content": "fictional",
+  "model_calls": 0,
+  "notes": "31 native map/tool tests passed; installed no-engine seed/add/triage gate also passed.",
+  "limitations": [
+    "A brainstormed blind spot is a hypothesis; classification does not prove it exists."
+  ],
+  "files": {
+    "native.log": "98d448e20a1ef85658bac757c6fa3a0a933d7193a340db4cf0680f673808fe98",
+    "functional.log": "3516c58b31e6fb76b473c9ee51b1a94124f67f55c541793768418bdb49acc814"
+  }
+}

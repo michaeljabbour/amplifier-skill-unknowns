@@ -1,0 +1,6 @@
+test_installed_map_survives_add_and_triage_without_engine (__main__.Gate.test_installed_map_survives_add_and_triage_without_engine) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.213s
+
+OK
