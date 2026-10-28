@@ -53,35 +53,39 @@ The worked examples on the site are fictional. They illustrate the output and de
 
 ### amplifier-bundle-unknowns
 
-Find and close the gap between what you asked for and what the work actually
-requires -- before that gap gets expensive.
-
-Think of your request as a map and the real codebase as the territory. They
-never match perfectly. This bundle charts where they differ and drives each
-difference to a decision, one cheap step at a time. Its real promise is
-discovery: it helps you see things about your own project you couldn't see on
-your own, even working with an AI. Avoiding costly rework is the floor;
-seeing what you were blind to is the point.
+Compare the plan with the available evidence. Keep established constraints,
+open questions, unstated preferences and possible blind spots in one map, then
+choose an inquiry whose answer could change the next step. A suggested blind
+spot remains a hypothesis until evidence supports it. This workflow does not
+guarantee complete discovery or avoided rework.
 
 ![Example unknowns map](docs/images/map-example.png)
 
-*Every run produces a map like this -- four boxes an executive can walk in 60 seconds.*
+*Illustrative map from the included example. Real maps may leave quadrants empty; classification is a navigation aid, not proof of completeness.*
 
 ## The four boxes
 
-The map sorts every gap into one of four boxes. You only ever act on the
-right-hand three; the first box is just what's already settled.
+The map offers four categories. Use only categories supported by the task;
+do not invent an item to fill a box. Revisit established items when their
+evidence changes.
 
 | Box | What lives here |
 |---|---|
-| **What we know for sure** | Facts you've stated and questions already resolved. Nothing to do. |
-| **Questions we're working on** | Open questions you know you have (*known unknowns*) -- decide these next. |
-| **Things you'd recognize on sight** | Preferences you never wrote down but would spot instantly (*unknown knowns*). |
-| **Blindspots we found** | Things nobody thought to ask (*unknown unknowns*) -- the expensive surprises, caught early. |
+| **Established information** | Evidence-backed facts, user-stated constraints and resolved questions, with their basis retained. |
+| **Open questions** | Explicit questions whose answers may change the work (*known unknowns*). |
+| **Unstated preferences** | Candidate constraints or preferences to confirm with the owner (*unknown knowns*). |
+| **Possible blind spots** | Hypotheses about missing questions, not discovered facts (*unknown unknowns*). The retained renderer labels this category “Blindspots we found”; assess each item against its evidence. |
 
-## Quick start
+## Optional Amplifier workflow
 
-Install the bundle:
+The portable method at the top of this page works through an ordinary agent
+host. The deterministic `unknowns` CLI installs separately with
+`python3 -m pip install .`; its map operations need no Attractor engine or model key.
+Run `unknowns --help` for the installed version.
+
+For the complete native Amplifier workflow, the root bundle includes Attractor
+and its interactive orchestration. Configure that host and its provider before
+using this optional path. Install the root bundle:
 
 ```
 amplifier bundle add https://github.com/michaeljabbour/amplifier-skill-unknowns
@@ -89,8 +93,9 @@ amplifier bundle add https://github.com/michaeljabbour/amplifier-skill-unknowns
 
 Then pick either of the two easiest first runs.
 
-**One-shot survey.** Point it at any goal and get the full map back with the
-gaps prioritized and a suggested next move:
+**One-shot survey.** Point it at a goal to propose an initial map, prioritize
+consequential questions and suggest a next inquiry. It need not populate every
+quadrant and does not establish that all gaps have been found:
 
 ```
 /unknownfinder Add a new OIDC auth provider to a codebase I don't know well
@@ -103,8 +108,8 @@ chart a task for you:
 Chart the unknowns for: migrate the session store to Postgres
 ```
 
-The living map is written to `.ai/unknowns-map.dot`, and `unknowns png`
-renders the picture you saw above.
+The optional native workflow writes `.ai/unknowns-map.dot`. The CLI can render
+it with `unknowns png` when Graphviz is installed.
 
 > **Note:** composing this into your own bundle instead of running it
 > standalone? Include `behaviors/unknowns.yaml`, not the root bundle -- see
@@ -116,18 +121,17 @@ renders the picture you saw above.
 - The tool replies with a plain-language briefing: what's settled, what's
   open, what it suspects you'll recognize, and what it thinks nobody asked.
 - It offers to go deeper -- an interview (one question at a time) or a
-  blindspot pass (it teaches you the area first, then names the traps).
-- As you answer, gaps move across the boxes and the map updates live. Nothing
-  is deleted; a resolved gap stays on the map marked resolved, so you can see
-  how you got there.
+  blindspot pass (it explains the area, then proposes assumptions to test).
+- As evidence changes, reclassify the relevant entries. The reclassification
+  operation retains resolved entries, so the reason for a change can be inspected.
 - It ends every turn with one concrete next step, not a dashboard.
 
-A briefing reads like this:
+A fictional briefing might read like this:
 
 ```
-Blindspots we found (1)
-  * No agreed way to measure "did this help?" -- decide the success test
-    before the pilot, or you'll only know in hindsight.
+Possible blind spot — unverified hypothesis
+  * Is there an agreed success test for the pilot?
+    Check the project brief before treating this as a missing requirement.
 
 NEXT -> Answer the open questions, or say "interview me" to go one at a time.
 ```
@@ -136,7 +140,7 @@ NEXT -> Answer the open questions, or say "interview me" to go one at a time.
 
 Five ways to run the same logic, from most guided to most raw:
 
-- **Lifecycle pipeline** -- the full pre/during/post workflow with human gates: [`pipelines/unknowns-lifecycle.dot`](pipelines/unknowns-lifecycle.dot).
+- **Lifecycle pipeline** -- an optional pre/during/post definition for a configured Attractor runner and human gates: [`pipelines/unknowns-lifecycle.dot`](pipelines/unknowns-lifecycle.dot).
 - **Amplifier Resolve** -- the pipeline registered in the dot-graph picker: [`pipelines/unknowns-lifecycle.resolver.yaml`](pipelines/unknowns-lifecycle.resolver.yaml).
 - **Python library** -- deterministic map operations you can import: [`unknowns_map/`](unknowns_map/) (`import unknowns_map`).
 - **Agent tool** -- the map operations exposed to agents: [`modules/tool-unknowns/`](modules/tool-unknowns/).
@@ -147,11 +151,12 @@ Five ways to run the same logic, from most guided to most raw:
 | Path | What it is |
 |---|---|
 | [`agents/unknowns-cartographer.md`](agents/unknowns-cartographer.md) | The agent that owns the map -- seeds it, renders the briefing, updates it. |
-| [`agents/unknownfinder.md`](agents/unknownfinder.md) | One-shot survey that fills all four boxes from a goal. |
-| [`skills/blindspot-pass/SKILL.md`](skills/blindspot-pass/SKILL.md) | `/blindspot` -- teaches the area, then names the traps. |
-| [`skills/unknownfinder/SKILL.md`](skills/unknownfinder/SKILL.md) | `/unknownfinder` -- slash entry point for the survey. |
+| [`agents/unknownfinder.md`](agents/unknownfinder.md) | Optional survey adapter that loads the canonical method. |
+| [`skills/unknowns/SKILL.md`](skills/unknowns/SKILL.md) | The one canonical portable method and its references. |
+| [`modes/blindspot.md`](modes/blindspot.md) | Optional `/blindspot` adapter to the canonical method. |
+| [`modes/unknownfinder.md`](modes/unknownfinder.md) | Optional `/unknownfinder` survey adapter. |
 | [`modes/interview.md`](modes/interview.md) | `/interview` -- one question at a time, hardest-first. |
-| [`pipelines/unknowns-lifecycle.dot`](pipelines/unknowns-lifecycle.dot) | The full lifecycle as a runnable pipeline. |
+| [`pipelines/unknowns-lifecycle.dot`](pipelines/unknowns-lifecycle.dot) | Optional lifecycle definition; execution requires the configured runner. |
 | [`context/map-template.dot`](context/map-template.dot) | Seed template for a fresh map, with the node schema inline. |
 | [`unknowns_map/`](unknowns_map/) | Python package: deterministic map ops + the `unknowns` CLI. |
 
@@ -159,7 +164,7 @@ Five ways to run the same logic, from most guided to most raw:
 
 - **[superpowers](https://github.com/microsoft/amplifier-bundle-superpowers)** -- an entry ramp before `/brainstorm` and an exit gate before `/finish`.
 - **[stories](https://github.com/microsoft/amplifier-module-stories)** -- turns the post-work pitch and explainer into HTML stories.
-- **[attractor](https://github.com/microsoft/amplifier-bundle-attractor)** -- hard dependency; provides the pipeline engine and the human-gate mechanism.
+- **[attractor](https://github.com/microsoft/amplifier-bundle-attractor)** -- used by the optional root Amplifier bundle and lifecycle pipeline for orchestration and human gates. It is not required by the portable skill or deterministic map library/CLI.
 
 ## Credit
 

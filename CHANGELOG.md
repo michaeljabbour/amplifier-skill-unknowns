@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-28 — Newcomer guide corrections
+
+- Correct canonical clone-directory or method links found by an independent public reader review.
+- Keep optional execution requirements separate from independent installation; label illustrative hypotheses and untested outcomes.
+
 ## 2026-10-28 — Public site and first-use guide
 
 - Lead with the intended user, concrete benefits, a fictional output preview and a first task.
