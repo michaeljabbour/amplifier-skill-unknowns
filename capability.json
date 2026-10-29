@@ -133,5 +133,12 @@
     "proof_summary": "Native map/tool tests and an installed no-engine seed/add/triage check passed. A map or routing token does not demonstrate that an inquiry ran or that rework was avoided.",
     "next_step": "Bring one plan and ask which unanswered question would most change its next step."
   },
-  "repository_url": "https://github.com/michaeljabbour/amplifier-skill-unknowns"
+  "repository_url": "https://github.com/michaeljabbour/amplifier-skill-unknowns",
+  "film": {
+    "file": "unknowns-film",
+    "seconds": 67,
+    "heading": "Twelve green steps. One secret.",
+    "blurb": "In 67 seconds, a migration plan looks perfect until step seven turns out to rest on a guess nobody checked. Unknowns sorts what you know from what you are only assuming, picks the one question that could change the plan, and turns it into a small test before anything moves. Captions are on the player; a transcript is below.",
+    "note": "The migration plan, the files and the test result are a fictional example. The film shows how the skill behaves; it does not report results."
+  }
 }

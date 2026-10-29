@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-10-28 — Film
+
+- Add a 67-second film to the site, with captions, a transcript, a poster and a 15-second cut. The example in it is fictional, and it reports no results.
+
 ## 2026-10-28 — Newcomer guide corrections
 
 - Correct canonical clone-directory or method links found by an independent public reader review.
