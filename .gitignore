@@ -26,3 +26,4 @@ dist/
 .pytest_cache/
 
 _site/
+.research/

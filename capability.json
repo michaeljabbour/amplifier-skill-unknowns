@@ -133,12 +133,95 @@
     "proof_summary": "Native map/tool tests and an installed no-engine seed/add/triage check passed. A map or routing token does not demonstrate that an inquiry ran or that rework was avoided.",
     "next_step": "Bring one plan and ask which unanswered question would most change its next step."
   },
-  "repository_url": "https://github.com/michaeljabbour/amplifier-skill-unknowns",
+  "repository_url": "https://github.com/michaeljabbour/amplifier-capability-unknowns",
+  "name": "amplifier-capability-unknowns",
+  "legacy_names": [
+    "amplifier-skill-unknowns",
+    "blindspot-pass",
+    "unknownfinder",
+    "unknowns"
+  ],
+  "contract_version": "amplifier-capability/v1",
+  "version": "0.1.0",
+  "version_basis": "Existing release metadata",
+  "engine": "LLM",
+  "engine_components": {
+    "caller_method": "LLM"
+  },
+  "surfaces": [
+    "agent-skills",
+    "amplifier-bundle",
+    "cli",
+    "python-library"
+  ],
+  "portable_method": {
+    "name": "unknowns",
+    "path": "skills/unknowns",
+    "include": [
+      "."
+    ],
+    "contract": "Agent Skills directory; caller applies the method; no independent execution loop is installed."
+  },
+  "interfaces": {
+    "portable": {
+      "input": "Caller task and explicitly authorized context",
+      "output": "Expose the assumptions and unanswered questions that could change a plan, then choose the next useful inquiry.",
+      "failure": "Report insufficient evidence, unsupported context or host limitation; never turn discovery into an execution claim."
+    },
+    "native": {
+      "distribution": "amplifier-unknowns",
+      "entrypoints": {
+        "unknowns": "unknowns_map.cli:main"
+      },
+      "docs": [
+        "docs/CONSOLIDATION.md"
+      ],
+      "status": "Existing declared entrypoints preserved; runtime signatures, service access and installation tests remain separate evidence."
+    },
+    "host_adapters": {
+      "amplifier_bundle": "bundle.md",
+      "grants_autonomy": false
+    }
+  },
+  "permissions": {
+    "installation": {
+      "network": false,
+      "executes_capability_code": false,
+      "writes": [
+        "Selected discovery folders",
+        ".capability-state transaction backups"
+      ],
+      "grants_runtime_permissions": false
+    },
+    "runtime": {
+      "status": "Host/caller authorizes each operation; installation is not a tool allowlist or standing approval.",
+      "declared_boundaries": [
+        "A brainstormed blind spot is a hypothesis; classification does not prove it exists."
+      ]
+    },
+    "secret_names": {
+      "discovery_requires": [],
+      "native_runtime_inventory": "See native documentation; no credentials are bundled or inferred."
+    }
+  },
+  "dataflow": {
+    "installation": "Read pinned tracked portable source and copy locally with SHA-256 receipts. No source text is transmitted.",
+    "method": "Caller supplies authorized context; existing promise and boundaries govern output.",
+    "native_runtime": "Provider/network/storage flows are owned by native interfaces and host authorization; these files do not enable them."
+  },
+  "source_policy": {
+    "revision": "Explicit full40-character Git commit required at installation; never infer latest.",
+    "repository_rename": "Public identity may change; skill folder, imports, entrypoints, tool IDs and schemas remain stable.",
+    "research": ".research/market remains local and ignored; AGENTS governs refresh."
+  },
   "film": {
     "file": "unknowns-film",
     "seconds": 67,
     "heading": "Twelve green steps. One secret.",
     "blurb": "In 67 seconds, a migration plan looks perfect until step seven turns out to rest on a guess nobody checked. Unknowns sorts what you know from what you are only assuming, picks the one question that could change the plan, and turns it into a small test before anything moves. Captions are on the player; a transcript is below.",
     "note": "The migration plan, the files and the test result are a fictional example. The film shows how the skill behaves; it does not report results."
-  }
+  },
+  "repository_aliases": [
+    "https://github.com/michaeljabbour/amplifier-skill-unknowns"
+  ]
 }
