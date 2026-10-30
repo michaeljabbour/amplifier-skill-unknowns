@@ -8,7 +8,7 @@ digraph unknowns {
     nodesep=0.6
     ranksep=0.7
     bgcolor="white"
-    source_hash="764ac72020b1898fbae99ff9aff1666a10f29a3542d635ff5563fd396af16fa7"
+    source_hash="59ced1e7354a69d289e257ab02e0503dca51c02e001393c8cb5e85bacb24c46d"
 
     node [fontname="Helvetica", fontsize=11, style="filled,rounded"]
     edge [fontname="Helvetica", fontsize=9]
@@ -21,7 +21,7 @@ digraph unknowns {
         fillcolor="#f9f9f9"
         color="#999999"
 
-        beh_unknowns_behavior [label="unknowns-behavior\n3 tools · 2 ctx\n~1882 tok", shape=box, fillcolor="#e0f2f1", style="filled,rounded"]
+        beh_unknowns_behavior [label="unknowns-behavior\n3 tools · 2 ctx\n~1909 tok", shape=box, fillcolor="#e0f2f1", style="filled,rounded"]
     }
 
     subgraph cluster_agents {
@@ -31,7 +31,16 @@ digraph unknowns {
         color="#999999"
 
         agt_unknownfinder [label="unknownfinder\n~412 tok desc", shape=box, fillcolor="#c8e6c9", style="filled,rounded"]
-        agt_unknowns_cartographer [label="unknowns-cartographer\n~393 tok desc", shape=box, fillcolor="#c8e6c9", style="filled,rounded"]
+        agt_unknowns_cartographer [label="unknowns-cartographer\n~400 tok desc", shape=box, fillcolor="#c8e6c9", style="filled,rounded"]
+    }
+
+    subgraph cluster_modules {
+        label="Modules"
+        style="filled"
+        fillcolor="#f9f9f9"
+        color="#999999"
+
+        mod_tool_unknowns [label="tool-unknowns\n1 tool · ~339 tok", shape=box, fillcolor="#bbdefb", style="filled,rounded"]
     }
 
     subgraph cluster_context {
@@ -40,7 +49,7 @@ digraph unknowns {
         fillcolor="#f9f9f9"
         color="#999999"
 
-        ctx_unknowns_awareness_md [label="unknowns-awareness.md\n~415 tok", shape=box, fillcolor="#e1bee7", style="filled,rounded"]
+        ctx_unknowns_awareness_md [label="unknowns-awareness.md\n~434 tok", shape=box, fillcolor="#e1bee7", style="filled,rounded"]
     }
 
     subgraph cluster_legend {

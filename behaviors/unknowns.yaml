@@ -46,7 +46,7 @@ tools:
       # entry is silently ignored; use the git self-reference form instead
       # (same pattern as the gitea and digital-twin-universe bundles).
       skills:
-        - "git+https://github.com/michaeljabbour/amplifier-skill-unknowns@main#subdirectory=skills"
+        - "git+https://github.com/michaeljabbour/amplifier-capability-unknowns@main#subdirectory=skills"
 
 agents:
   include:
