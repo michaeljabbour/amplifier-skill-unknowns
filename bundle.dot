@@ -8,12 +8,12 @@ digraph unknowns {
     nodesep=0.6
     ranksep=0.7
     bgcolor="white"
-    source_hash="59ced1e7354a69d289e257ab02e0503dca51c02e001393c8cb5e85bacb24c46d"
+    source_hash="64b7e2bf847d3813623e7e87eba072143da3f560ec849cd5c5ae4181892a5c97"
 
     node [fontname="Helvetica", fontsize=11, style="filled,rounded"]
     edge [fontname="Helvetica", fontsize=9]
 
-    root_unknowns [label="unknowns v0.1.0\n0 tools · 0 agents\n~523 tok aggregate", shape=box, fillcolor="#80cbc4", style="filled,rounded,bold", penwidth=2]
+    root_unknowns [label="unknowns v0.1.0\n0 tools · 0 agents\n~520 tok aggregate", shape=box, fillcolor="#80cbc4", style="filled,rounded,bold", penwidth=2]
 
     subgraph cluster_behaviors {
         label="Behaviors"
@@ -75,11 +75,11 @@ digraph unknowns {
 
     ext_githttps___github_com_microsoft_amplifier_foundation_main [label="amplifier-foundation\n(external, cost)", shape=box, fillcolor="#80cbc4", style="dashed", color="red", penwidth=2]
     ext_githttps___github_com_microsoft_amplifier_bundle_attractor_main [label="amplifier-bundle-attractor\n(external, cost)", shape=box, fillcolor="#80cbc4", style="dashed", color="red", penwidth=2]
-    ext_attractor_bundles_attractor_interactive [label="attractor-interactive\n(external, cost)", shape=box, fillcolor="#80cbc4", style="dashed", color="red", penwidth=2]
+    ext_githttps___github_com_microsoft_amplifier_bundle_attractor_mainsubdirectorybundles_attractor_interactive_yaml [label="attractor-interactive.yaml\n(external, cost)", shape=box, fillcolor="#80cbc4", style="dashed", color="red", penwidth=2]
 
     root_unknowns -> ext_githttps___github_com_microsoft_amplifier_foundation_main [style=dashed]
     root_unknowns -> ext_githttps___github_com_microsoft_amplifier_bundle_attractor_main [style=dashed]
-    root_unknowns -> ext_attractor_bundles_attractor_interactive [style=dashed]
+    root_unknowns -> ext_githttps___github_com_microsoft_amplifier_bundle_attractor_mainsubdirectorybundles_attractor_interactive_yaml [style=dashed]
     root_unknowns -> beh_unknowns_behavior [label="composes"]
     beh_unknowns_behavior -> agt_unknowns_cartographer [label="owns"]
     beh_unknowns_behavior -> agt_unknownfinder [label="owns"]

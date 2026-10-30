@@ -25,3 +25,16 @@ def test_skill_source_resolves_declared_method():
     name = re.search(r"^name:\s*(.+)$", frontmatter, re.M).group(1).strip()
     assert name == manifest["portable_method"]["name"] == "unknowns"
     assert re.search(r"^  name: unknowns$", (ROOT / "bundle.md").read_text(), re.M)
+
+
+def test_interactive_dependency_resolves_without_a_prior_namespace_alias():
+    """Fresh loaders must resolve the same declared dependency before alias registration."""
+    bundle = (ROOT / "bundle.md").read_text().split("---", 2)[1]
+    includes = re.findall(r"^  - bundle: (.+)$", bundle, re.M)
+    assert "attractor:bundles/attractor-interactive" not in includes
+    dependency = "git+https://github.com/microsoft/amplifier-bundle-attractor@main"
+    assert dependency in includes
+    interactive = next(source for source in includes if "bundles/attractor-interactive" in source)
+    source = urlsplit(interactive[4:])
+    assert "git+" + source._replace(fragment="").geturl() == dependency
+    assert parse_qs(source.fragment) == {"subdirectory": ["bundles/attractor-interactive.yaml"]}

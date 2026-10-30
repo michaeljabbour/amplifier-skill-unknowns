@@ -20,13 +20,12 @@ bundle:
 
 includes:
   - bundle: git+https://github.com/microsoft/amplifier-foundation@main
-  # Register the "attractor" namespace, then reference its interactive entry
-  # point by name -- mirrors attractor's own bundle.md self-reference to
-  # attractor:behaviors/attractor-core. This gives us the run_pipeline tool
-  # (tool-pipeline-run) needed to invoke unknowns:pipelines/unknowns-lifecycle.dot,
-  # plus an interactive loop-agent orchestrator with filesystem/bash/search tools.
+  # Keep Attractor awareness and load its interactive entry by explicit source.
+  # A fresh registry resolves concurrent includes independently; it must not
+  # require an attractor alias registered by another include first.
+  # The same existing dependency supplies run_pipeline and the interactive loop.
   - bundle: git+https://github.com/microsoft/amplifier-bundle-attractor@main
-  - bundle: attractor:bundles/attractor-interactive
+  - bundle: git+https://github.com/microsoft/amplifier-bundle-attractor@main#subdirectory=bundles/attractor-interactive.yaml
   - bundle: unknowns:behaviors/unknowns
 ---
 

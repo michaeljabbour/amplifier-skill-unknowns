@@ -8,7 +8,7 @@ license = { text = "MIT" }
 # The lib is a direct git dep so the module works when installed standalone;
 # in-repo dev falls back to a sys.path shim (see __init__.py).
 dependencies = [
-    "amplifier-unknowns @ git+https://github.com/michaeljabbour/amplifier-bundle-unknowns@main",
+    "amplifier-unknowns @ git+https://github.com/michaeljabbour/amplifier-capability-unknowns@main",
 ]
 
 [project.entry-points."amplifier.modules"]
